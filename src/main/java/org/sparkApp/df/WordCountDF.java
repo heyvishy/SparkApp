@@ -1,5 +1,6 @@
 package org.sparkApp.df;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 import org.apache.spark.SparkConf;
@@ -9,14 +10,29 @@ import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.sql.DataFrame;
 import org.apache.spark.sql.SQLContext;
-import org.sparkApp.domain.Word;
 
 public class WordCountDF {
 
-	//private static FlatMapFunction<String, Object> new ;
-
+	public static class Word implements Serializable{
+		
+		private String word;
+		private int count;
+		
+		public String getWord() {
+			return word;
+		}
+		public void setWord(String word) {
+			this.word = word;
+		}
+		public int getCount() {
+			return count;
+		}
+		public void setCount(int count) {
+			this.count = count;
+		}
+	}
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		SparkConf conf = new SparkConf().setAppName("WordCountDF").setMaster("local");
 		JavaSparkContext sc = new JavaSparkContext(conf);
 		SQLContext sqlContext = new SQLContext(sc);
@@ -44,7 +60,7 @@ public class WordCountDF {
 		schemaWord.registerTempTable("words");
 
 		// SQL can be run over RDDs that have been registered as tables.
-		DataFrame allWords = sqlContext.sql("SELECT count(*) AS wordCount,word FROM words GROUP BY word ORDER BY wordCount DESC");
+		DataFrame allWords = sqlContext.sql("SELECT count(*) AS wordCount,word FROM words GROUP BY word");
 
 		// The results of SQL queries are DataFrames and support all the normal RDD operations.
 		// The columns of a row in the result can be accessed by ordinal.

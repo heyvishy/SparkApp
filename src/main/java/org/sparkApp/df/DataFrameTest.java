@@ -18,7 +18,6 @@ public class DataFrameTest {
 	    
 	    // Displays the content of the DataFrame to stdout
 	    df.show();
-	    
 	    // Print the schema in a tree format
 	    df.printSchema();
 	    // root
