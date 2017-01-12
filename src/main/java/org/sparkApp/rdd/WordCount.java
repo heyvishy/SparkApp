@@ -18,7 +18,7 @@ public class WordCount {
 
 	public static void main(String[] args) {
 		
-		//String file ="hdfs://localhost:9000/user/vishalshukla/input/testfile.txt";
+		//String file ="hdfs://localhost:9001/user/data/reviews.csv";
 		String file = "src/main/resources/testfile.txt";
 	    SparkConf conf = new SparkConf().setAppName("Simple Application").setMaster("local");
 	    JavaSparkContext sc = new JavaSparkContext(conf);
