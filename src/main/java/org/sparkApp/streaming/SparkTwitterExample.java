@@ -23,10 +23,10 @@ public class SparkTwitterExample {
 	    //String checkpointDir = TutorialHelper.getCheckpointDirectory();
 
 	    // Configuring Twitter credentials
-	    String apiKey = "Asu2oPLikpk9d9D9Kjf2WP7Z1";
-	    String apiSecret = "0jCZzL6DBA0ZKv1mlo71wxepYH1WlX5Y3aeJaGJmJcQx5PyYt3";
-	    String accessToken = "2340447961-z8FjcGh9znRDvrGZmBWaiWNHa0fxXIN84AL9zId";
-	    String accessTokenSecret = "7caiUWGHAn1CiySr0rVk6UspiPL82DE6MteGkYVOuMWpQ";
+	    String apiKey = "somekey";
+	    String apiSecret = "somesecret";
+	    String accessToken = "sometoekn";
+	    String accessTokenSecret = "secrettoken";
 	    //TwitterUtils. .configureTwitterCredentials(apiKey, apiSecret, accessToken, accessTokenSecret);
 	    
 	    
